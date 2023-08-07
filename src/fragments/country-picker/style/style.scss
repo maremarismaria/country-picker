@@ -1,0 +1,112 @@
+.country-picker {
+  position: relative;
+  width: 100%;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  input[type=text] {
+    border: 1px solid white;
+    border-radius: 45px;
+    height: 45px;
+    padding-right: 6px;
+    padding-left: 52px;
+    margin-left: 0;
+    width: 100%;
+    font-family: inherit;
+
+    &::placeholder {
+      color: #AFAFAF;
+      font-family: inherit;
+    }
+  }
+
+  .flag {
+    box-shadow: 0 0 1px 0 #888;
+    background-image: url(../assets/flags.png);
+    background-repeat: no-repeat;
+    background-color: #dbdbdb;
+    background-position: 20px 0;
+    width: 20px;
+    height: 15px;
+  }
+
+  .flag-dropdown {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: auto;
+    left: 0;
+    padding: 1px;
+
+    .selected-flag {
+      width: 46px;
+      z-index: 1;
+      position: relative;
+      width: 46px;
+      height: 100%;
+      padding: 0 0 0 8px;
+      cursor: pointer;
+
+      .flag {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+      }
+
+      .arrow {
+        position: absolute;
+        top: 50%;
+        margin-top: -2px;
+        right: 6px;
+        width: 0;
+        height: 0;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-top: 4px solid #555;
+
+        &.up {
+          border-top: none;
+          border-bottom: 4px solid #555;
+        }
+      }
+    }
+
+    .country-list {
+      padding: 0;
+      margin: 0;
+      max-height: 200px;
+      overflow-y: auto;
+      background-color: white;
+      list-style: none;
+      text-align: left;
+      width: 100%;
+
+      .country-item {
+        padding: 5px 10px;
+
+        &:hover {
+          cursor: pointer;
+          background-color: #f2f2f2;
+        }
+
+        .flag {
+          display: inline-block;
+          width: 20px;
+          margin-right: 6px;
+          vertical-align: middle;
+        }
+
+        .country-name {
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
